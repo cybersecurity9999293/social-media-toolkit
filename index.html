@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Toolkit — Free Online Utilities</title>
+    <meta name="description" content="Free social media toolkit with Bio Generator, Emoji Search, Hashtag Generator, and Font Generator. Create stunning profiles and content instantly.">
+    <meta name="keywords" content="social media toolkit, bio generator, emoji search, hashtag generator, font generator, free online tools">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Floating Orbs Background -->
+    <div class="orb-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">SocialKit</span>
+            </a>
+            <div class="nav-links">
+                <a href="#bio-generator" class="nav-link">Bio Generator</a>
+                <a href="#emoji-search" class="nav-link">Emoji Search</a>
+                <a href="#hashtag-generator" class="nav-link">Hashtag Generator</a>
+                <a href="#font-generator" class="nav-link">Font Generator</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#bio-generator" onclick="toggleMobileMenu()">Bio Generator</a>
+            <a href="#emoji-search" onclick="toggleMobileMenu()">Emoji Search</a>
+            <a href="#hashtag-generator" onclick="toggleMobileMenu()">Hashtag Generator</a>
+            <a href="#font-generator" onclick="toggleMobileMenu()">Font Generator</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">100% Free • No Sign-Up Required</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Social Media</span>
+                <br>Toolkit
+            </h1>
+            <p class="hero-subtitle">Professional-grade utilities to elevate your social media presence. Create, generate, and discover — instantly.</p>
+            <div class="hero-tools">
+                <a href="#bio-generator" class="hero-tool-btn">
+                    <span class="tool-icon">✨</span> Bio Generator
+                </a>
+                <a href="#emoji-search" class="hero-tool-btn">
+                    <span class="tool-icon">😀</span> Emoji Search
+                </a>
+                <a href="#hashtag-generator" class="hero-tool-btn">
+                    <span class="tool-icon">#</span> Hashtag Generator
+                </a>
+                <a href="#font-generator" class="hero-tool-btn">
+                    <span class="tool-icon">𝐀</span> Font Generator
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- AdSense Banner -->
+    <div class="ad-container ad-top">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Bio Generator Section -->
+    <section id="bio-generator" class="tool-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Tool 01</span>
+                <h2 class="section-title">Bio Generator</h2>
+                <p class="section-subtitle">Create the perfect bio for any social media platform in seconds</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-card-inner">
+                    <div class="tool-input-group">
+                        <label class="tool-label">Your Name / Username</label>
+                        <input type="text" id="bioName" class="tool-input" placeholder="e.g. Alex Morgan">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">What do you do?</label>
+                        <input type="text" id="bioNiche" class="tool-input" placeholder="e.g. Digital Artist, Fitness Coach, Tech Writer">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Platform</label>
+                        <div class="platform-selector">
+                            <button class="platform-btn active" data-platform="instagram" onclick="selectPlatform(this)">Instagram</button>
+                            <button class="platform-btn" data-platform="twitter" onclick="selectPlatform(this)">Twitter/X</button>
+                            <button class="platform-btn" data-platform="tiktok" onclick="selectPlatform(this)">TikTok</button>
+                            <button class="platform-btn" data-platform="linkedin" onclick="selectPlatform(this)">LinkedIn</button>
+                            <button class="platform-btn" data-platform="youtube" onclick="selectPlatform(this)">YouTube</button>
+                        </div>
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Tone / Style</label>
+                        <div class="platform-selector">
+                            <button class="tone-btn active" data-tone="professional" onclick="selectTone(this)">Professional</button>
+                            <button class="tone-btn" data-tone="creative" onclick="selectTone(this)">Creative</button>
+                            <button class="tone-btn" data-tone="funny" onclick="selectTone(this)">Funny</button>
+                            <button class="tone-btn" data-tone="minimal" onclick="selectTone(this)">Minimal</button>
+                            <button class="tone-btn" data-tone="bold" onclick="selectTone(this)">Bold</button>
+                        </div>
+                    </div>
+                    <button class="tool-generate-btn" onclick="generateBio()">
+                        <span>Generate Bio</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+                <div class="tool-output" id="bioOutput" style="display:none;">
+                    <div class="output-header">
+                        <h3>Generated Bios</h3>
+                        <span class="output-count" id="bioCount">5 bios generated</span>
+                    </div>
+                    <div class="bio-results" id="bioResults"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense In-Content -->
+    <div class="ad-container ad-content">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Emoji Search Section -->
+    <section id="emoji-search" class="tool-section tool-section-alt">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Tool 02</span>
+                <h2 class="section-title">Emoji Search</h2>
+                <p class="section-subtitle">Find the perfect emoji for any situation from our complete database</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-card-inner">
+                    <div class="tool-input-group">
+                        <label class="tool-label">Search Emojis</label>
+                        <div class="emoji-search-wrapper">
+                            <input type="text" id="emojiSearch" class="tool-input tool-input-large" placeholder="Type to search... e.g. 'happy', 'fire', 'love'" oninput="searchEmojis(this.value)">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="emoji-categories">
+                        <button class="emoji-cat-btn active" onclick="filterEmojiCategory('all', this)">All</button>
+                        <button class="emoji-cat-btn" onclick="filterEmojiCategory('smileys', this)">😀 Smileys</button>
+                        <button class="emoji-cat-btn" onclick="filterEmojiCategory('animals', this)">🐾 Animals</button>
+                        <button class="emoji-cat-btn" onclick="filterEmojiCategory('food', this)">🍕 Food</button>
+                        <button class="emoji-cat-btn" onclick="filterEmojiCategory('travel', this)">✈️ Travel</button>
+                        <button class="emoji-cat-btn" onclick="filterEmojiCategory('objects', this)">💡 Objects</button>
+                        <button class="emoji-cat-btn" onclick="filterEmojiCategory('symbols', this)">❤️ Symbols</button>
+                        <button class="emoji-cat-btn" onclick="filterEmojiCategory('flags', this)">🏁 Flags</button>
+                    </div>
+                </div>
+                <div class="emoji-grid" id="emojiGrid"></div>
+                <div class="emoji-copy-toast" id="emojiToast">Copied to clipboard!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="ad-container ad-between">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Hashtag Generator Section -->
+    <section id="hashtag-generator" class="tool-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Tool 03</span>
+                <h2 class="section-title">Hashtag Generator</h2>
+                <p class="section-subtitle">Generate trending and relevant hashtags for your posts</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-card-inner">
+                    <div class="tool-input-group">
+                        <label class="tool-label">Describe your post</label>
+                        <input type="text" id="hashtagTopic" class="tool-input" placeholder="e.g. Sunset photography at the beach">
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Platform</label>
+                        <div class="platform-selector">
+                            <button class="hashtag-platform-btn active" data-platform="instagram" onclick="selectHashtagPlatform(this)">Instagram</button>
+                            <button class="hashtag-platform-btn" data-platform="twitter" onclick="selectHashtagPlatform(this)">Twitter/X</button>
+                            <button class="hashtag-platform-btn" data-platform="tiktok" onclick="selectHashtagPlatform(this)">TikTok</button>
+                            <button class="hashtag-platform-btn" data-platform="linkedin" onclick="selectHashtagPlatform(this)">LinkedIn</button>
+                        </div>
+                    </div>
+                    <div class="tool-input-group">
+                        <label class="tool-label">Number of Hashtags</label>
+                        <div class="hashtag-count-selector">
+                            <button class="count-btn" onclick="setHashtagCount(10, this)">10</button>
+                            <button class="count-btn active" onclick="setHashtagCount(20, this)">20</button>
+                            <button class="count-btn" onclick="setHashtagCount(30, this)">30</button>
+                        </div>
+                    </div>
+                    <button class="tool-generate-btn" onclick="generateHashtags()">
+                        <span>Generate Hashtags</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+                <div class="tool-output" id="hashtagOutput" style="display:none;">
+                    <div class="output-header">
+                        <h3>Generated Hashtags</h3>
+                        <button class="copy-all-btn" onclick="copyAllHashtags()">📋 Copy All</button>
+                    </div>
+                    <div class="hashtag-results" id="hashtagResults"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense In-Content -->
+    <div class="ad-container ad-content">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Font Generator Section -->
+    <section id="font-generator" class="tool-section tool-section-alt">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Tool 04</span>
+                <h2 class="section-title">Font Generator</h2>
+                <p class="section-subtitle">Transform your text into stylish Unicode fonts instantly</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-card-inner">
+                    <div class="tool-input-group">
+                        <label class="tool-label">Enter your text</label>
+                        <input type="text" id="fontInput" class="tool-input tool-input-large" placeholder="Type anything here..." oninput="generateFonts(this.value)">
+                    </div>
+                </div>
+                <div class="font-results" id="fontResults">
+                    <p class="font-placeholder">Start typing above to see font transformations...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Bottom Banner -->
+    <div class="ad-container ad-bottom">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-icon">◆</span>
+                    <span class="logo-text">SocialKit</span>
+                    <p class="footer-desc">Free, professional-grade social media utilities. No sign-up, no limits, no catch.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Tools</h4>
+                    <a href="#bio-generator">Bio Generator</a>
+                    <a href="#emoji-search">Emoji Search</a>
+                    <a href="#hashtag-generator">Hashtag Generator</a>
+                    <a href="#font-generator">Font Generator</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="#">Social Media Tips</a>
+                    <a href="#">Growth Guides</a>
+                    <a href="#">Content Strategy</a>
+                    <a href="#">Platform Updates</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SocialKit. All rights reserved. Built with care for creators worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
